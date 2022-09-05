@@ -5,8 +5,11 @@ using namespace std;
 void setBits(int a, int b){
     int counter = 0;
     while(a!=0 || b!=0){
-        if(a&1==1 || b&1==1){
-            ++counter;
+        if(a&1==1){
+            counter++;
+        }
+        if(b&1==1){
+            counter++;
         }
         a=a>>1;
         b=b>>1;
