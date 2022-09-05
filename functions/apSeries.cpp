@@ -10,6 +10,7 @@ void apValues(int a_1, int d, int num){
     int a_n = a_1 +(num-1)*d;
     int ans = 0;
     for(int i=1;i<=num && ans<=a_n;i++){
+        ans = 0;
         ans = a_1 +(i-1)*d;
         printf("%d ",ans);
     }
