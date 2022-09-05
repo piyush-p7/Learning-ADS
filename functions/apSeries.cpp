@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <math.h>
+using namespace std;
 
 void apValues(int a_1, int d, int num){
     // a_n	=	the nᵗʰ term in the sequence
@@ -16,5 +17,13 @@ void apValues(int a_1, int d, int num){
 }
 
 int main(){
-
+    cout<<"Enter the a1 value - ";
+    int a1,d,n;
+    cin>>a1;
+    cout<<"Enter the d value - ";
+    cin>>d;
+    cout<<"Enter the n value - ";
+    cin>>n;
+    apValues(a1,d,n);
+    
 }
