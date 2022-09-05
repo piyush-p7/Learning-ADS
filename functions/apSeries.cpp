@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include <math.h>
 
 void apValues(int a_1, int d, int num){
@@ -9,7 +10,7 @@ void apValues(int a_1, int d, int num){
     int ans = 0;
     for(int i=1;i<=num && ans<=a_n;i++){
         ans = a_1 +(i-1)*d;
-        cout << ans << " ";
+        printf("%d ",ans);
     }
 
 }
