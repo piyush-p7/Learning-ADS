@@ -1,2 +1,2 @@
 # Learning-ADS
-My journey towards coding
+My journey towards Algorithms and Data-Structures
