@@ -38,7 +38,6 @@ void intersect(int arr1[],int size1,int arr2[],int size2){
     for(int i=0;i<index;i++){
         cout<<intersect[i]<<" ";
     }
-
 }
 
 int main(){
