@@ -1,4 +1,5 @@
 #include<iostream>
+#include<set>
 using namespace std;
 
 void getValues(int arr[],int size){
@@ -12,6 +13,7 @@ void intersect(int arr1[],int size1,int arr2[],int size2){
     cout<<"Intersection of the two arrays is: ";
     int intersect[10];
     int index=0;
+    
     if(size1>=size2){
         for(int i=0;i<size1;i++){
             for(int j=0;j<size2;j++){
@@ -34,9 +36,16 @@ void intersect(int arr1[],int size1,int arr2[],int size2){
             }
         }
     }
-    
-    for(int i=0;i<index;i++){
-        cout<<intersect[i]<<" ";
+    //Using the set, as not to get duplicate values.
+    set<int> s(intersect, intersect+index);
+    if (s.empty())
+    {
+        cout<<"None";
+    }
+    else{
+        for(auto i=s.begin();i!=s.end();i++){
+            cout << *i << " ";
+        }
     }
 }
 
