@@ -15,8 +15,8 @@ void intersect(int arr1[],int size1,int arr2[],int size2){
     int index=0;
     
     if(size1>=size2){
-        for(int i=0;i<size1;i++){
-            for(int j=0;j<size2;j++){
+        for(int i=0;i<size2;i++){
+            for(int j=0;j<size1;j++){
                 if (arr1[i]==arr2[j])
                 {
                     intersect[index]=arr1[i];
@@ -26,8 +26,8 @@ void intersect(int arr1[],int size1,int arr2[],int size2){
         }
     }
     else{
-        for(int i=0;i<size2;i++){
-            for(int j=0;j<size1;j++){
+        for(int i=0;i<size1;i++){
+            for(int j=0;j<size2;j++){
                 if (arr2[i]==arr1[j])
                 {
                     intersect[index]=arr2[i];
