@@ -16,15 +16,12 @@ public:
         int size = nums.size();
         sort(nums.begin(),nums.end());
         for(int i=0;i<size-1;i++){
-            for(int j=i+1;j<size;j++){
-                if(nums[i]==nums[j]){
+                if(nums[i]==nums[i+1]){
                     ans.push_back(nums[i]);
                 }
                 else{
                     break;
                 }
-                
-            }
         }
         return ans;
     }
