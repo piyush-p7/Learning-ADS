@@ -14,17 +14,16 @@ public:
     vector<int> findDuplicates(vector<int>& nums) {
         vector <int> ans;
         int size = nums.size();
-        int number = 0;
         sort(nums.begin(),nums.end());
         for(int i=0;i<size-1;i++){
             for(int j=i+1;j<size;j++){
                 if(nums[i]==nums[j]){
-                    number = nums[i];
+                    ans.push_back(nums[i]);
                 }
                 else{
                     break;
                 }
-                ans.push_back(number);
+                
             }
         }
         return ans;
