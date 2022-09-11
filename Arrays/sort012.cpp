@@ -20,10 +20,13 @@ void sort012(array<int,10>arr,int size){
         switch(arr[mid]){
             case 0:
                 swap(arr[low++],arr[mid++]);
+                break;
             case 1:
                 mid++;
+                break;
             case 2:
                 swap(arr[high--],arr[mid]);
+                break;
         }
     }
     //Printing the values.
