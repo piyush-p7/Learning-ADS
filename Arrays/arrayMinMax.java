@@ -16,8 +16,8 @@ public class arrayMinMax {
         // Integer.MAX_VALUE = 2^31-1 =  2147483647
         // Integer.MIN_VALUE = -2^31  = -2147483648
 
-//Here concept of Integer.MAX_VALUE & Integer.MIN_VALUE is used in the way if the number is greater/lesser 
-//than the Integer.MIN_VALUE/Integer.MAX_VALUE respectively then assign that number to [max & min respectively(variables)]
+    //Here concept of Integer.MAX_VALUE & Integer.MIN_VALUE is used in the way if the number is greater/lesser 
+    //than the Integer.MIN_VALUE/Integer.MAX_VALUE respectively then assign that number to [max & min respectively(variables)]
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for(int i=0;i<array.length;i++){
