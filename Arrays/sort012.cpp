@@ -6,11 +6,6 @@
 #include<array>
 using namespace std;
 
-// void swap(int a,int b){
-//     int temp = a;
-//     a = b;
-//     b = temp;
-// }
 
 void sort012(array<int,10>arr,int size){
     int low = 0;
