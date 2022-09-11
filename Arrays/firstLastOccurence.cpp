@@ -4,6 +4,8 @@
 using namespace std;
 
 int firstOcurr(int arr[],int size, int key){
+    //Occurence of the key in the array (leftmost) 
+
     int low = 0;
     int high = size - 1;
     int mid = low + (high - low)/2;  
@@ -31,6 +33,8 @@ int firstOcurr(int arr[],int size, int key){
 
 
 int lastOcurr(int arr[],int size, int key){
+    //Occurence of the key in the array (rightmost) 
+    
     int low = 0;
     int high = size - 1;
     int mid = low + (high - low)/2;  
