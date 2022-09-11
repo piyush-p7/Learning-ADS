@@ -34,7 +34,7 @@ void sortArr(array <int,10> arr, int size){
             break;
         }
     }
-    cout<<"Negatives after taking to one side : ";
+    cout<<"Negatives after taking to one side: ";
     for (int i = 0; i < size; i++)
     {
         cout<<arr[i]<<" ";
