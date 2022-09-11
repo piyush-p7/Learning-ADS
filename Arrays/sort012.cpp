@@ -19,9 +19,9 @@ void sort012(array<int,10>arr,int size){
     while(mid<=high){
         switch(arr[mid]){
             case 0:
-                  swap(arr[low++],arr[mid++]);
+                swap(arr[low++],arr[mid++]);
             case 1:
-                  mid++;
+                mid++;
             case 2:
                 swap(arr[high--],arr[mid]);
         }
