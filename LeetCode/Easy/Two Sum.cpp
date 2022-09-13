@@ -10,17 +10,51 @@
 code :
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int len = nums.length;
-        int []res = new int[2];
-        for(int i = 0;i<len;i++){
-            for (int j = i+1;j<len;j++){
-                if (nums[i]+nums[j]==target){
-                    res[0] = i;
-                    res[1] = j;
+        int front = 0, back = nums.length - 1, sum = 0;
+        while (front <= back) {
+            int frontI = 0, backI = nums.length - 1;
+            while (frontI <= backI) {
+                if (backI != frontI) {
+                    sum = nums[backI] + nums[frontI];
+                    if (sum == target) {
+                        return new int[]{backI, frontI};
+                    }
                 }
+                if (frontI != front) {
+                    sum = nums[front] + nums[frontI];
+                    if (sum == target) {
+                        return new int[]{front, frontI};
+                    }
+                }
+                if (front != backI) {
+                    sum = nums[front] + nums[backI];
+                    if (sum == target) {
+                        return new int[]{front, backI};
+                    }
+                }
+                /*
+
+                 */
+                if (back != frontI) {
+                    sum = nums[back] + nums[frontI];
+                    if (sum == target) {
+                        return new int[]{back, frontI};
+                    }
+                }
+
+                if (back != backI) {
+                    sum = nums[back] + nums[backI];
+                    if (sum == target) {
+                        return new int[]{back, backI};
+                    }
+                }
+
+                frontI++;
+                backI--;
             }
+            front++;
+            back--;
         }
-    return res;
+        return null;
     }
-    
 }
