@@ -32,16 +32,12 @@ class Solution {
                         return new int[]{front, backI};
                     }
                 }
-                /*
-
-                 */
                 if (back != frontI) {
                     sum = nums[back] + nums[frontI];
                     if (sum == target) {
                         return new int[]{back, frontI};
                     }
                 }
-
                 if (back != backI) {
                     sum = nums[back] + nums[backI];
                     if (sum == target) {
