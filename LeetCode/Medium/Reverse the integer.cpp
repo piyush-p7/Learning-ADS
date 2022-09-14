@@ -16,9 +16,11 @@ public:
         int ans = 0;
         
         while(x!=0){
-            int digit = x%10;
+            int digit = x%10;//getting out digit 
             
-            if((ans>INT_MAX/10)||(ans<INT_MIN/10)){
+            if((ans>INT_MAX/10)||(ans<INT_MIN/10)){ 
+                // For checking whether the ans lies in range of 
+                // intmMAX and intMIN
                 return 0;
             }
             
