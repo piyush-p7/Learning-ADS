@@ -7,7 +7,7 @@
 // Input: nums = [2,7,11,15], target = 9
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-code :
+code below:
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int front = 0, back = nums.length - 1, sum = 0;
