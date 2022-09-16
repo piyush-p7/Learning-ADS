@@ -9,7 +9,7 @@
 // Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
 // Output: [9,4]
 // Explanation: [4,9] is also accepted.
-code: 
+code below: 
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
