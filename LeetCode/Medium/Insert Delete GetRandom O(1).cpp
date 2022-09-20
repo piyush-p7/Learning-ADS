@@ -22,6 +22,7 @@
 // randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
 // randomizedSet.insert(2); // 2 was already in the set, so return false.
 // randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
+code below:
 
 class RandomizedSet {
 	// Average Time O(1) & Auxiliary Space O(N)
