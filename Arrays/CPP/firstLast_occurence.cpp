@@ -4,7 +4,7 @@
 using namespace std;
 //Find first and last ocurrence of an element.
 void RightOccurence(vector<int>&arr,int size,int key){
-    int RightOccur=0;
+    int RightOccur=-1;
     
     int start=0;
     int end=size-1;
@@ -30,7 +30,7 @@ void RightOccurence(vector<int>&arr,int size,int key){
 }
 
 void LeftOccurence(vector<int>&arr,int size,int key){
-    int LeftOccur=0;
+    int LeftOccur=-1;
     
     int start=0;
     int end=size-1;
