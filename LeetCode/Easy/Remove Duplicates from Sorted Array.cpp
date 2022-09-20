@@ -22,3 +22,15 @@ for (int i = 0; i < k; i++) {
 // Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
 Code Below:
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int l = 1;
+        for(int r=1;r<nums.size();r++){
+            if(nums[r]!=nums[r-1]){
+                nums[l++]=nums[r];
+            }
+        }
+        return l;
+    }
+};
