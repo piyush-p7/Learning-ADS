@@ -54,7 +54,7 @@ int main(){
         cin>>arr[i];
     }
     int key=0;
-    cout<<"Enter the value whose index is to be found: ";
+    cout<<"Enter the Key whose index is to be found: ";
     cin>>key;
     int pivotIndex = pivot(arr,size);
     cout<<"Pivot element at: "<<pivotIndex;
