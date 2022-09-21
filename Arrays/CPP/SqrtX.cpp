@@ -19,11 +19,26 @@ int mySqrt(int x) {
         }
         return right; 
     }
-
-    int main(){
-        int num = 0;
-        cout<<"Enter the number: ";
-        cin>>num;
-        int sqrt = mySqrt(num);
-        cout<<"Square root of "<<num<<" is "<<sqrt<<".";
+double presicion(int num,int pre,int sqrt){
+    double fact = 1;
+    double ans = sqrt;
+    for (int i = 0; i < pre; i++){
+        fact = fact/10;
+        for (double j = ans; j*j<num; j+=fact){
+            ans = j;
+        }
     }
+    return ans;
+}
+
+int main(){
+    int num = 0;
+    cout<<"Enter the number: ";
+    cin>>num;
+    int sqrt = mySqrt(num);
+    cout<<"Enter the presicion: ";
+    int pre = 0;
+    cin>>pre;
+    double PreSqrt = presicion(num,pre,sqrt);
+    cout<<"Square root of "<<num<<" is "<<PreSqrt<<".";
+}
