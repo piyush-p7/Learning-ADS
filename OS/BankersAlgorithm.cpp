@@ -12,7 +12,7 @@ int main (){
 	cout<<"\n";
 	cout<<"Enter the current resources: ";
 	cin>>current[0]>>current[1]>>current[2];
-	for (int i = 0; i < p; ++i) 
+	for (int i = 0; i < p; ++i)
 	{
 		cout<<"\n\n\t\t\tProcess P"<<i+1<<" Details\n";
 		cout<<"Enter Allocation : ";
