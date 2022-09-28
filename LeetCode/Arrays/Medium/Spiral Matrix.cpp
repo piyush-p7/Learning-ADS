@@ -9,56 +9,46 @@ Time complexity : O(m*n)
 space complexity : O(1)
 
 Code below:
-class Solution{
- public:
-    vector <int> spiralOrder(vector<vector<int>> &matrix){
-        vector<int> ans;
-
-        int right = matrix[0].size()-1;
-        int left = 0;
-        int top = 0;
-        int bottom = matrix.size()-1;
-
-        int path = 0;
-        while (left<=right && top<=bottom)
-        {
-            if (path==0)
-            {
-                for (int i = left; i <= right; i++)
-                {
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector <int> ans;
+        int right = matrix[0].size()-1;      //colloumn
+        int left = 0;                        // ~
+        int top = 0;                         //row
+        int bottom = matrix.size()-1;        // ~
+     
+        int d = 0;
+        while(top<=bottom && left <= right){
+            if(d==0){
+                for(int i=left;i<=right;i++){
                     ans.push_back(matrix[top][i]);
                 }
-                path = 1;
+                d=1;
                 top++;
             }
-            else if (path==1)
-            {
-                for (int i = top; i <= bottom; i++)
-                {
+            else if(d==1){
+                for(int i=top;i<=bottom;i++){
                     ans.push_back(matrix[i][right]);
                 }
-                path = 2;
+                d=2;
                 right--;
             }
-            else if (path==2)
-            {
-                for (int i = right; i >= left; i--)
-                {
+            else if(d==2){
+                for(int i=right;i>=left;i--){
                     ans.push_back(matrix[bottom][i]);
                 }
-                path = 3;
+                d=3;
                 bottom--;
             }
-            else if (path==3)
-            {
-                for (int i = bottom; i >= top; i--)
-                {
+            else if(d==3){
+                for(int i=bottom;i>=top;i--){
                     ans.push_back(matrix[i][left]);
                 }
-                path=0;
+                d=0;
                 left++;
             }
         }
         return ans;
     }
-}
+};
