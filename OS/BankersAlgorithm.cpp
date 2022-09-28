@@ -62,6 +62,7 @@ int main (){
 			cin>>current[0]>>current[1]>>current[2];
 		}
 		else{
+			cout<<"\nTHANK YOU!!";
 			break;
 		}
 		Calculate();
