@@ -18,34 +18,34 @@ public:
         int top = 0;                         //row
         int bottom = matrix.size()-1;        // ~
      
-        int d = 0;
+        int path = 0;
         while(top<=bottom && left <= right){
-            if(d==0){
+            if(path==0){
                 for(int i=left;i<=right;i++){
                     ans.push_back(matrix[top][i]);
                 }
-                d=1;
+                path=1;
                 top++;
             }
-            else if(d==1){
+            else if(path==1){
                 for(int i=top;i<=bottom;i++){
                     ans.push_back(matrix[i][right]);
                 }
-                d=2;
+                path=2;
                 right--;
             }
-            else if(d==2){
+            else if(path==2){
                 for(int i=right;i>=left;i--){
                     ans.push_back(matrix[bottom][i]);
                 }
-                d=3;
+                path=3;
                 bottom--;
             }
-            else if(d==3){
+            else if(path==3){
                 for(int i=bottom;i>=top;i--){
                     ans.push_back(matrix[i][left]);
                 }
-                d=0;
+                path=0;
                 left++;
             }
         }
