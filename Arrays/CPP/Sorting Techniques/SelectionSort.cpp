@@ -9,12 +9,11 @@ void printVec(vector<int> &arr){
     } 
 }
  
-void selectionSort(vector<int> &vec){
-    int n = vec.size();
-    for (int i = 0; i < n-1; i++)
+void selectionSort(vector<int> &vec, int size){
+    for (int i = 0; i < size-1; i++)
     {
         int minIndex = i;
-        for (int j = i+1; j < n; j++)
+        for (int j = i+1; j < size; j++)
         {
             if (vec[j]<vec[minIndex])
             {
@@ -36,7 +35,7 @@ int main(){
         cin >> value;
         vec.push_back(value);
     }
-    selectionSort(vec);
+    selectionSort(vec,size);
     printVec(vec);
     return 0;
 }
