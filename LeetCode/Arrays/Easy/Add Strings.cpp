@@ -15,18 +15,30 @@ public:
         int index_2 = num2.length() - 1;
         int carry = 0;
         string ans;
-        
-        while(index_1 > -1 || index_2 > -1) {
-            int digit_1 = (index_1 >= 0) ? num1[index_1--] - '0' : 0;
-            int digit_2 = (index_2 >= 0) ? num2[index_2--] - '0' : 0;
-            int sum = digit_1 + digit_2 + carry;
-
-            //> put digit into string
-            ans.insert(ans.begin(), (sum % 10) + '0');
-            
-            carry = (sum > 9) ? sum / 10 : 0;
+        while(index_1>=0 || index_2>=0){
+            if(index_1<0){
+                ans.push_back(((num2[index_2]-48+carry)%10)+48);
+                carry = (num2[index_2]-48+carry)/10;
+                index_2--;
+            }
+            else if(index_2<0){
+                ans.push_back(((num1[index_1]-48+carry)%10)+48);
+                carry = (num1[index_1]-48+carry)/10;
+                index_1--;
+            }
+            else{
+                ans.push_back(((num1[index_1]-48+num2[index_2]-48+carry)%10)+48);
+                carry = (num1[index_1]-48+num2[index_2]-48+carry)/10;
+                index_1--;
+                index_2--;
+            }
         }
-        
-        return (carry != 0) ? "1" + ans : ans;
+        if(carry){
+            ans.push_back(carry+48);
+        }
+        for(int i=0,j=ans.size()-1;i<=j;i++,j--){
+            swap(ans[i], ans[j]);
+        }
+        return ans;
     }
 };
