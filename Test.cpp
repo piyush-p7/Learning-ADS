@@ -1,37 +1,20 @@
 #include<iostream>
-#include<vector>
-using namespace std;  
-string longestPalindrome(string& s){
-    string str = "";
-    int strLen = 0;
-    for(int i=0;i<s.size();i++){
-        //For Odd
-        int l = i;
-        int r = i;
-        while(l>=0 && r<s.size() && s[l]==s[r]){
-            if(r-l+1>strLen){
-                str = s.substr(r, r-l+1);
-                strLen = r-l+1;
-            }
-            r++;
-            l--;
-        }
-        //For Even
-        l = i;
-        r = i+1;
-        while(l>=0 && r<s.size() && s[l]==s[r]){
-            if(r-l+1>strLen){
-                str = s.substr(r, r-l+1);
-                strLen = r-l+1;
-            }
-            r++;
-            l--;
-        }
-    }
-    return str;
+#include<array>
+using namespace std;//Function creates an array with specified length and returns the last element as nth Fibonacci number
+int fibonacciNumber(int n){
+    int fibArray[n],i;
+    fibArray[0] = 0, fibArray[1] = 1;
+    for(i=0; i<n; i++)
+        fibArray[i] = fibArray[i-1]+fibArray[i-2];
+    return fibArray[n-1];
 }
 
-int main(){
-    string s = "babad";
-    cout<<longestPalindrome(s);
+//The parameters in bracket may be ignored
+//They are used to input command line arguments and are not necessary
+int main(int argc, char* argv){
+    int n;
+    cout<<"Which number in series do you want?";
+    cin>>n;
+    cout<<fibonacciNumber(n);
+    return 0;
 }
