@@ -1,3 +1,16 @@
+// You are given a string 'S. Your task is to check whether
+// the string is palindrome or not. For checking palindrome
+// consider alphabets and numbers only and ignore the
+// symbols and whitespaces.
+
+// Example
+// Let S "c1 0$d@eeD olc".
+// If we ignore the special characters,
+// whitespaces and convert all uppercase
+// letters to lowercase, we get S =
+// "clodeedo1c", which is a palind rome . Hence,
+// the given string is also a palindrome .
+
 #include <bits/stdc++.h> 
 #include<string>
 #include<set>
