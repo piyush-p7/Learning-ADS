@@ -1,91 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
-class Solution {
-public:
-    string start;
-    string end;
-
-    int minMutation(string start, string end, vector<string>& bank) {
-        int size = bank.size(); // extract size
-        
-        unordered_set<string> dictionary; // make dictionary set 
-        for(int i = 0; i < size; i++) // insert every word of bank into the set
-        {
-            dictionary.insert(bank[i]);
-        }
-        
-        // if end word is not present into the dictionary,
-        // will return false from here
-        if(dictionary.find(end) == dictionary.end())
-        {
-            return -1;
-        }
-        
-        // choices that are availble to us
-        vector<char> available = {'A', 'C', 'G', 'T'};
-        
-        // make vis set, to find out whether for a particular word, 
-        // either we previously encountered or not
-        unordered_set<string> vis;
-        
-        int ans = 0; // declare ans variable 
-        
-        queue<string> q; // define queue to start bfs
-        q.push(start); // push starting word into the queue
-        vis.insert(start); // insert into vis
-        
-        // starting bfs
-        while(!q.empty())
-        {
-            int n = q.size(); // extract size of queue
-            while(n--)
-            {
-                string curr = q.front(); // curr word 
-                q.pop(); // pop from queue
-                
-                if(curr == end) // if curr word equals to end, return ans from here
-                {
-                    return ans;
+    int numPairsDivisibleBy60(vector<int>& time) {
+        int ans = 0;
+        sort(time.begin(), time.end());
+        for(int index = 0;index<time.size();index++){
+            int start = 0;
+            int end = time.size()-1;
+            while(start<=end){
+                int mid = start + (end-start)/2;
+                cout<<"\nMid -> "<<time[mid];
+                cout<<"\nIndex -> "<<time[index];
+                int divSum = time[mid]+time[index];
+                cout<<"\nSum -> "<<divSum<<"\n---------------------";
+                if(divSum%60==0){
+                    ans++;
+                    start++;
                 }
-                
-                // now for every index of curr word
-                for(int i = 0; i < 8; i++)
-                {
-                    char orig = curr[i]; 
-                    
-                    // we will try to replace every available choice
-                    for(int j = 0; j < 4; j++) 
-                    {   
-                        curr[i] = available[j]; // replace character
-                        
-                        // if it is present into the dictionary
-                        if(dictionary.find(curr) != dictionary.end())
-                        {
-                            // also we haven't seen it previously
-                            if(vis.find(curr) == vis.end())
-                            {
-                                q.push(curr); // then push into queue
-                                vis.insert(curr); // and also put into vis
-                            }
-                        }
-                    }
-                    // now replace with again original character,
-                    // for further check
-                    curr[i] = orig;
+                if(divSum/60>1){
+                    end= mid-1;
+                }
+                else{
+                    start = mid+1;
                 }
             }
-            ans++; // increment answer
         }
-        
-        return -1; // still we will not able to find end word, return -1
+        return ans;
     }
-};
 int main(){
-    string start1 = "AACCGGTT";
-    string end1 = "AAACGGTA";
-    vector<string> bank = {"AACCGGTA","AACCGCTA","AAACGGTA"};
-    Solution ob = Solution();
-    ob.start = start1;
-    ob.end = end1;
-    cout<<ob.minMutation(start1,end1,bank);
+    vector<int> time = {439,407,197,191,291,486,30,307,11};
+    sort(time.begin(), time.end());
+    for(int i=0;i<time.size();i++){
+        cout<<time[i]<<" ";
+    }
+    int ans = numPairsDivisibleBy60(time);
+    cout<<"\nAnswer is -> "<<ans;
 }
