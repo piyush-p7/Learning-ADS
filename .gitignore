@@ -2,3 +2,4 @@
 .vscode
 *.class
 .gitignore
+Test.cpp
