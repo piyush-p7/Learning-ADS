@@ -9,7 +9,6 @@
 
 // Input  : ar[] = {1, 6, 3}
 // Output : 18
-// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <vector>
 using namespace std;
