@@ -4,10 +4,7 @@ using namespace std;
 //Function for Random index getting
 int getRandoms(int lower, int upper,unordered_set<int>&ls){
     int num;
-	for (int i = 0; i < 1; i++) {
-		num = (rand() %
-		(upper - lower + 1)) + lower;
-	}
+	num = (rand() % (upper - lower + 1)) + lower;
     if (ls.find(num) != ls.end()) {
         getRandoms(lower, upper, ls);
     }
