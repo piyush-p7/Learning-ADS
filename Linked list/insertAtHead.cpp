@@ -37,8 +37,17 @@ int main(){
     Node* node1 = new Node(value);
     cout<<"Enter the another value: ";
     cin>>value;
-    insertHead(node1, value);
+    //Printing the node.
     printNode(node1);
+    //inserting at head.
+    insertHead(node1, value);
+    //Printing the node.
+    printNode(node1);
+    //inserting at head.
+    insertHead(node1, 13);
+    //Printing the node.
+    printNode(node1);
+    //Making the new Node.
     Node* node2 = new Node(value);
     printNode(node2);
 }
