@@ -4,14 +4,110 @@ using namespace std;
 class memory{
 public: 
     unordered_set<int> ls;
-    vector<int> mainMem;
+    vector<int> vec;
+    memory(int size){
+        vector<int>vector(size,0);
+        this->vec = vector;
+    }
 
-    
+    //Function for Random index getting
+    int getRandoms(int lower, int upper,unordered_set<int>&ls){
+        ls = this->ls;
+        int num;
+        num = (rand() % (upper - lower + 1)) + lower;
+        if (ls.find(num) != ls.end()) {
+            getRandoms(lower, upper, ls);
+        }
+        else {
+            ls.insert(num);
+        }
+        return num;
+    }
+
+    //Function for adding the process into the Main Memory
+    void writeProcess(vector<int> &vec){
+        vec = this->vec;
+        cout<<"\nEnter the number of Blocks(Each block represents 1 memory unit \nin main memory): ";
+        int numBlock = 0;
+        cin>>numBlock;
+        vector<int> ans(numBlock,0);
+        vec = ans;
+    }
+
+    //For Entering the process into the Main Memory
+    void enterProcess(vector<int>&vec, int process,unordered_set<int>&ls){
+        ls = this->ls;
+        vec = this->vec;
+        int size = vec.size();
+        if(process>size){
+            //If the number of process to be entered is more than main memory size
+            cout<<"\nNo of process is greater than main memory size.\n";
+        }
+        else{
+            for(int i=0;i<process;i++){
+                int index = getRandoms(0, size-1,ls);
+                vec[index]=1;
+            }
+        }
+    }
+
+    void getMemory(vector<int> &vec){
+        vec= this->vec;
+        //Visiualizing the  main memory and the processes
+        int size = vec.size();
+        if(size==0){
+            cout<<"\nFirst enter number of process\n";
+            return;
+        }
+        int mid = 0;
+        switch (size)
+        {
+        case 1:
+            mid = 0;
+            break;
+        case 2:
+            mid = 1;
+            break;
+        default:
+            mid = size/2;
+            break;
+        }
+        cout<<"\nVisualization of main memory\n          /\\\n";
+
+        for (int i = 0; i < size; i++)
+        {   
+            if (vec[i]==1 && i == mid)
+            {
+                cout<<"[#######]  "<<size <<endl;
+            }
+            else if(vec[i]==1 && i != mid)
+            {
+                cout<<"[#######]  |\n";
+            }
+            else if(vec[i]==0 && i!=mid) cout<<"[-------]  |\n";
+            else{
+                cout<<"[-------]  "<<size<<endl;
+            }
+        }
+        cout<<"          \\/\n";
+    }
+
+    //for implementing the compaction;
+    void doCompaction(vector<int>vec,unordered_set<int>ls){
+        ls = this->ls;
+        vec = this->vec;
+        sort(vec.begin(),vec.end());
+        reverse(vec.begin(),vec.end());
+        getMemory(vec);
+    }
+
 };
 
 int main(){
-    vector<string> mainMemories;
+    unordered_set<string> mainMemories;
+    string nameMem="";
     bool check = true;
+    int i = 1;
     while (check)
     {
         int pos = -1;
@@ -28,13 +124,22 @@ int main(){
         switch (pos)
         {
         case 1:
-            /* code */
+            cout<<"Enter the name for your main memory: ";
+            cin>>nameMem;
+            if(mainMemories.find(nameMem)==mainMemories.end()){
+                mainMemories.insert(nameMem);
+            }
+            else{
+                cout<<"This name is already used.\n";
+            }
             break;
         case 2:
             /* code */
             break;
         case 3:
-            /* code */
+            
+            for ( auto it = mainMemories.begin(); it != mainMemories.end(); ++it ,i++) 
+                cout << i<<" -> " << *it<<endl;
             break;
         case 4: 
             break;
