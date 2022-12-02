@@ -4,7 +4,7 @@ using namespace std;
 class Node{
     public:
         int data;
-        Node *next;
+        Node* next;
 
         //Constructor
         Node(int value){
@@ -18,8 +18,8 @@ int main(){
     cout<<"Enter the value: ";
     int value = 0;
     cin>>value;
-    Node myNode = Node(value);
-    cout<< "Entered value: "<<myNode.data<<" ,Address is: "<<myNode.next;
+    Node* myNode = new Node(value);
+    cout<< "Entered value: "<<myNode->data<<" ,Address is: "<<myNode->next;
     return 0;
 
 }
