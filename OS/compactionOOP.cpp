@@ -5,6 +5,7 @@ class memory{
 public: 
     unordered_set<int> ls;
     vector<int> vec;
+
     memory(int size){
         vector<int>vector(size,0);
         this->vec = vector;
@@ -108,6 +109,8 @@ int main(){
     string nameMem="";
     bool check = true;
     int i = 1;
+    int size = 0;
+    memory obj(size);
     while (check)
     {
         int pos = -1;
@@ -132,14 +135,18 @@ int main(){
             else{
                 cout<<"This name is already used.\n";
             }
+            cout<<"Enter the no.of pages into which it should be divided: ";
+            cin>>size;
+            obj = memory(size);
             break;
         case 2:
-            /* code */
+            
             break;
         case 3:
             
             for ( auto it = mainMemories.begin(); it != mainMemories.end(); ++it ,i++) 
                 cout << i<<" -> " << *it<<endl;
+            i = 1;
             break;
         case 4: 
             break;
