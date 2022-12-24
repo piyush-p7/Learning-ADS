@@ -140,10 +140,19 @@ int main(){
             obj = memory(size);
             break;
         case 2:
-            
+            cout<<"Enter the name of main memory: ";
+            cin>>nameMem;
+            if(mainMemories.find(nameMem)==mainMemories.end()){
+                cout<<"\nThere is no main memory with this name.\n";
+                break;
+            }
+            else{
+                cout<<"\nEnter the new partioning of the main mem "<<nameMem<<": ";
+                cin>>size;
+                cout<<"\nChanged the "<<nameMem<<"'s partioning size to "<<size;
+            }
             break;
         case 3:
-            
             for ( auto it = mainMemories.begin(); it != mainMemories.end(); ++it ,i++) 
                 cout << i<<" -> " << *it<<endl;
             i = 1;
