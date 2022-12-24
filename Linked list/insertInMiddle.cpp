@@ -34,10 +34,29 @@ void printNode(Node* &head){
     cout<<"NULL"<<endl;
 }
 
+void insertHead(Node* &head, int Value){
+    Node* temp = new Node(Value);
+    //Making the Value of next for temp(new Node) 
+    //equal to that of the Main node in Linklist.
+    temp->next = head;
+    head = temp;
+}
+
 void insertInMiddle(Node* &head, int indexAdd){
+    if(indexAdd == 0){
+        cout<<"0 is not a correct index"<<endl;
+        cout<<"Enter the index again(Other than 0): ";
+        cin>>indexAdd;
+        insertInMiddle(head, indexAdd);
+        return;
+    }
     int val = 0;
     cout<<"Enter the value: ";
     cin>>val;
+    if(indexAdd == 1){
+        insertHead(head, val);
+        return;
+    }
     int index = 1;
     Node* temp = head;
     Node* NewNode = new Node(val);
