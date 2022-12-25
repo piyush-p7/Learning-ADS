@@ -46,7 +46,9 @@ void deleteNode(Node* &head, int pos){
             prev = cur;
             cur = cur->next;
         }
+        //Linking the two required nodes..
         prev->next = cur->next;
+        //Removing the link to next node..
         cur->next = NULL;
         delete cur;
     }
