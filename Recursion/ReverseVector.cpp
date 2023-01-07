@@ -1,6 +1,7 @@
 #include<bits-stdc++.h>
 using namespace std;
 void reverseRecur(vector<int> &vec, int i, int j){
+    //Base Condition
     if(i>=j){
         return;
     }
