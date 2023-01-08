@@ -13,6 +13,14 @@ class NodeDL{
             this->next = NULL;
             this->prev = NULL;
         }
+        ~NodeDL(){
+            int val = this->data;
+            if(next != NULL){
+                delete next;
+                next = NULL;
+            }
+            cout<<"\nFreed memory of node having the data: "<<val<<endl;
+        }
 };
 
 void insertPosition(NodeDL* &head, NodeDL* &tail,int pos, int val){
@@ -80,20 +88,30 @@ void printNode(NodeDL* &head){
 }
 
 void DeleteNode(NodeDL* &head, int pos){
-    int temp = 1;
-
+    
     if(pos == 1){
-        head = head->next;
-        return;
+        NodeDL* Temp = head;
+        Temp->next->prev = NULL;
+        head = Temp->next;
+        Temp->next = NULL;
+        delete Temp;
     }
 
-    NodeDL* Temp = head;
-    while (temp<pos-1)
-    {
-        Temp = Temp->next;
-        temp++;
+    else{
+        int temp = 1;
+        NodeDL* Temp = head;
+        NodeDL* Prev = NULL;
+        while (temp<pos)
+        {
+            Prev = Temp;
+            Temp = Temp->next;
+            temp++;
+        }
+        Prev->next = Temp->next;
+        Temp->next = NULL;
+        delete Temp;   
     }
-    Temp->next = Temp->next->next;
+     
 }
 
 int main(){
