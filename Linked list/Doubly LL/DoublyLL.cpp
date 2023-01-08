@@ -38,11 +38,11 @@ void printNode(NodeDL* &head){
 
 void reversePrint(NodeDL* &head){
     NodeDL* temp = head;
-    while (temp!=NULL)
+    while (temp->next!=NULL)
     {
         temp = temp->next;
     }
-    while (temp->prev!=NULL)
+    while (temp!=NULL)
     {
         cout<<temp->data<<"->";
         temp = temp->prev;
