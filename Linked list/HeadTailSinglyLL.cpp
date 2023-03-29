@@ -73,10 +73,10 @@ void insertHead(Node* &head, int Value){
 
 void insertInMiddle(Node* &head, int indexAdd){
     if(indexAdd == 0){
-        cout<<"0 is not a correct index"<<endl;
-        cout<<"Enter the index again(Other than 0): ";
-        cin>>indexAdd;
-        insertInMiddle(head, indexAdd);
+        int val = 0;
+        cout<<"Enter the value: ";
+        cin>>val;
+        insertHead(head, val);
         return;
     }
     int val = 0;
