@@ -1,4 +1,6 @@
 #include<iostream>
+#include<algorithm>
+
 using namespace std;
 
 void nameDivide(string name){
@@ -19,10 +21,8 @@ void nameDivide(string name){
     }
 
     if(i>=name.size()){
-        string temp = middleName;
+        swap(middleName, lastName);
         middleName = "null";
-        lastName = temp;
-
     }
     else{
         for(i++;i<name.size();i++){
