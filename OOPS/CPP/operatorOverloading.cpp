@@ -8,9 +8,9 @@ class example{
         cout<<this->a<<", "<<this->b<<endl;
     }
     
-    void setter(int x, int y){
-        this->a = x;
-        this->b = y;
+    void setter(){
+        cin>>this->a;
+        cin>>this->b;
     }
     
     //To use ob++
@@ -29,7 +29,7 @@ class example{
 int main()
 {
     example ob;
-    ob.setter(2, 4);
+    ob.setter();
     ob.getter();
     ob++;
     ob.getter();
